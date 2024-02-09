@@ -1,0 +1,23 @@
+{{ "splide-min.css" | asset_url | stylesheet_tag }}
+
+<script src="{{"splide-min.js" | asset_url}}" defer></script>
+
+<script src="{{"my-splide.js" | asset_url}}" defer></script>
+
+
+<my-splide>
+  {% if products  %}
+  <div class="splide" aria-label="Splide Basic HTML Example">
+    <div class="splide__track">
+      <ul class="splide__list">
+        {% for product in products %}
+          <li class="splide__slide">{% render 'product-card', product: product, section_id: section.id %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+</my-splide>
+
+
+

@@ -1,0 +1,15 @@
+{
+  "name": "select-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "shopify theme dev -s https://b02-anand-s.myshopify.com",
+    "sync": "shopify theme dev --theme-editor-sync -s https://b02-anand-s.myshopify.com",
+    "pull": "shopify theme pull -s https://b02-anand-s.myshopify.com",
+    "pull-json": "shopify theme pull -d -o *.json -s https://b02-anand-s.myshopify.com",
+    "share": "shopify theme share -s https://b02-anand-s.myshopify.com"
+  },
+  "author": "Anand",
+  "license": "ISC"
+}

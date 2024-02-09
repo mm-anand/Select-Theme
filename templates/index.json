@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "image_with_text_alternate_X4mqep": {
+      "type": "image-with-text-alternate",
+      "settings": {
+        "desktop_image": "shopify:\/\/shop_images\/hero-image.webp",
+        "mobile_image": "shopify:\/\/shop_images\/hero-image.webp",
+        "heading": "Wear the Story of Every Moment with Distinction",
+        "paragraph": "<p>Each piece speaks of moments lived, memories made, and a future of distinction.<\/p>",
+        "text_alignment": "bottom",
+        "button_label_1": "Shop Shirts",
+        "button_url_1": "shopify:\/\/collections",
+        "button_label_2": "Shop Tops",
+        "button_url_2": "shopify:\/\/collections\/frontpage",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product_list_LgmjTg": {
+      "type": "product-list",
+      "settings": {
+        "section_heading": "Individual Styles Redefined",
+        "product_list": [
+          "august-rib-wool-oak",
+          "black-stripe-spring-oxford-shirt",
+          "blue-oxford-shirt",
+          "carson-chore-jacket-black-hole",
+          "carhartt-coat-black",
+          "columbia-tee-worn-olive",
+          "denim-chore-coat-black"
+        ],
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "image_with_text_alternate_X4mqep",
+    "product_list_LgmjTg"
+  ]
+}

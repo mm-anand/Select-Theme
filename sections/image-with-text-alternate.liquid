@@ -1,0 +1,139 @@
+<link rel="stylesheet" href="{{'image-with-text-alternate.css' |  asset_url }}">
+
+<div class="image-with-text">
+    <div class="page-width image-with-text__container padding-{{ section.id }}">
+        <div class="image-with-text__image">
+            {% if section.settings.desktop_image != blank and section.settings.mobile_image !=blank %}
+            {%  render 'responsive-picture', class:'section-image' , desktopImage:section.settings.desktop_image, mobileImage:section.settings.mobile_image %} 
+
+            {%  else %}
+                {{ 'detailed-apparel-1' | placeholder_svg_tag }}
+
+            {% endif %}
+        </div>
+
+        <div class="image-with-text__text-content">
+            <div class="image-with-text__inner">
+            <div class="image-with-text_heading h2">{{ section.settings.heading }}</div>
+            <div class="image-with-text_paragraph ">{{ section.settings.paragraph }}</div>
+                {% if section.settings.button_label_1 != blank and section.settings.button_url_1 != blank %}
+                    <div class="image-with-text_buttons">
+                        <a href="{{ section.settings.button_url_1 }}">
+                        <span>{{ section.settings.button_label_1 }}</span></a>
+                        <a href="{{ section.settings.button_url_2 }}">
+                        <span>{{ section.settings.button_label_2 }}</span></a>
+                    </div>
+                
+                {% endif %}
+        </div>
+        </div>
+    </div>
+</div>
+
+
+{%  schema  %} 
+    {
+        "name":"Image-Text-Alternate",
+        "tag": "section",
+        "class": "image-with-text-alternate",
+        "settings": [
+            {
+                "type":"header",
+                "content":"Image Settings"
+            },
+            {
+                "type": "image_picker",
+                "label": "Desktop Image",
+                "id": "desktop_image"
+            },
+            {
+                "type": "image_picker",
+                "label": "Mobile Image",
+                "id": "mobile_image"
+            },
+            {
+                "type":"header",
+                "content":"Text Settings"
+            },
+            {
+                "type": "text",
+                "label": "Heading",
+                "id": "heading",
+                "default": "Wear the Story of Every Moment with Distinction"
+            },
+            {
+                "type": "richtext",
+                "label": "Paragraph",
+                "id": "paragraph",
+                "default": "<p>Each piece speaks of moments lived, memories made, and a future of distinction.</p>"
+            },
+            {
+                "type": "select",
+                "label": "Text-Alignment",
+                "id": "text_alignment",
+                "options": [
+                    {
+                        "value": "top", "label":"Top"
+                    },
+                    {
+                        "value":"center","label":"Center"
+                    },
+                    {
+                        "value":"bottom", "label":"Bottom"
+                    }
+                ],
+                "default": "bottom"
+            },
+            {
+                "type":"text",
+                "label": "First Button Label",
+                "id": "button_label_1",
+                "default": "Shop Shirts"
+            },
+            {
+                "type": "url",
+                "label": "Button Url 1",
+                "id": "button_url_1"
+            },{
+                "type":"text",
+                "label": "Second Button Label",
+                "id": "button_label_2",
+                "default": "Shop Tops"
+            },
+            {
+                "type": "url",
+                "label": "Button Url 2",
+                "id": "button_url_2"
+            },
+            {
+        "type": "header",
+        "content": "Section padding"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 36
+      }
+    ],
+    
+    "presets": [{
+        "name": "Image-Text-Alternate"
+    }]
+        
+    }
+ {% endschema %}

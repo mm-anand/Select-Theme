@@ -1,0 +1,103 @@
+.product-card__title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.product-card__vendor {
+  color: rgb(131, 130, 130);
+  font-weight: 500;
+  font-size: 14px;
+}
+.product-card__prices {
+  margin-top: 1.6rem;
+  position: relative;
+  width: 110px;
+}
+.media > img {
+  transform: scale(1);
+  transition: transform 0.25s ease-in-out;
+}
+
+.product-card__link:hover {
+  .media > img {
+    transform: scale(1.1);
+  }
+}
+.media {
+  position: relative;
+}
+/* .media > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.25s ease-in-out;
+}*/
+
+/* Overlay button styles */
+.product-card-overlay__btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+.product-card__overlay-quick-view-button {
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+
+  transform: translateY(20px);
+  transition: transform 0.25s ease-in-out;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 12px;
+  padding: 5px;
+}
+
+/* Overlay view details button */
+.product-card__overlay-view-details {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity transform 0.25s ease-in-out;
+}
+.product-card__overlay-view-details > * {
+  transform: translateY(20px);
+  transition: transform 0.25s ease-in;
+}
+
+.product-card__price > *,
+.product-card__compareprice > * {
+  transform: translateY(0);
+  transition: transform 0.25s ease-in;
+}
+.splide__slide:hover {
+  .product-card__overlay-view-details > * {
+    transform: translateY(0);
+  }
+  .product-card__overlay-view-details {
+    opacity: 1;
+  }
+  .product-card__price > *,
+  .product-card__compareprice > * {
+    transform: translateY(-20px);
+  }
+  .product-card__price,
+  .product-card__compareprice {
+    opacity: 0;
+  }
+  .product-card__overlay-quick-view-button {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .media > img {
+    transform: scale(1);
+  }
+}
