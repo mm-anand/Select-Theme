@@ -18,26 +18,24 @@
       <h2 class="product-list__heading">{{ section.settings.section_heading }}</h2>
     {% endif %}
 
-    <my-splide class="splide">
-      <div class="splide__list">
-        <div class="splide__track">
+    <my-splide >
+      <div class="splide">
+      <div class="splide__track">
+        <div class="splide__list">
     {% if section.settings.product_list %}
     {% for product in section.settings.product_list %}
-        <div class="splide__slide">
-          {% render 'product-card', product: product, section_id: section.id %}
-        </div>
+          {% render 'product-card' class:'splide__slide',product: product, section_id: section.id %} 
       {% else %}
         {% for i in (1..5) %}
-          <div class="grid__item">
-            <div class="media media--square">
+          <div class="splide__slide">
               {{ 'product-' | append: i | placeholder_svg_tag }}
-            </div>
           </div>
         {% endfor %}
       {% endfor %}
     {% endif %}
         </div>
       </div> 
+      </div>
     </my-splide>
   </div>
 </div>

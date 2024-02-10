@@ -1,21 +1,16 @@
 {% liquid
-  assign featured_image = product.featured_image 
-  assign secondary_image = product.images[1] 
-%<style>
-    .product-card__vendor{
-        font-weight: 500;
-    }
-</style>
+ assign featured_image = product.featured_image
+  assign secondary_image = product.images[1] | default: product.featured_image 
+%}
 
-<link rel="stylesheet" href="{{ product-card.css |  asset_url }}"/>
+
+<link rel="stylesheet" href="{{ 'product-card.css' | asset_url }}"></link>
 
 <product-card 
-  class="product-card"
-  data-product-handle="{{ product.handle }}" 
-  data-section-id="{{ section_id }}"
+  class="splide__slide"
 >
   <a href="{{ product.url }}" class="product-card__link">
-    <div class="media media--square media--transparent media--hover-effect">
+    <div class="media media--square">
       <img
         srcset="
           {%- if featured_image.width >= 165 -%}{{ featured_image | image_url: width: 165 }} 165w,{%- endif -%}
@@ -54,30 +49,37 @@
         width="{{ secondary_image.width }}"
         height="{{ secondary_image.height }}"
       >
+      {% comment %} Quick view button {% endcomment %}
+      <div class="product-card__overlay-btn">
+        <span class="product-card__overlay-quick-view-button">Quick View
+        </span>
+      </div>
+      
     </div>
 
   <div class="product-card__info">
     <div class="product-card__title h">{{ product.title }}</div>
 
     <div class="product-card__vendor">{{ product.vendor }}</div>
-    <div class="product-card__prices">
+    <div class="product-card__prices-view-details">
+      <div class="product-card__prices">
       <span class="product-card__price">{{ product.price  | money_with_currency  }}</span>
 
       {% if product.compare_at_price > product.price %}
         <s class="product-card__compareprice">{{ product.compare_at_price |  money_with_currency  }}</s>
       {% endif %}
-
+      </div>
+    
+    
+{% comment %} View Details button {% endcomment %}
       <div class="product-card__overlay-view-details">
-
+        <span>View Details</span> <span>
+						<svg class="icon" width="7" height="11" viewBox="0 0 7 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M3.95978 5.90881L0 1.94899L1.13137 0.817627L6.22258 5.90881L1.13137 10.9999L0 9.86857L3.95978 5.90881Z" fill="currentColor"></path>
+       </svg>
+        </span>
       </div>
     </div>
-    
-       
-      </div>
+    </div>
     </a>
-
-        
-      
-
-  
 </product-card>

@@ -7,33 +7,37 @@
   font-weight: 500;
   font-size: 14px;
 }
-.product-card__prices {
+.product-card__prices-view-details {
   margin-top: 1.6rem;
   position: relative;
-  width: 110px;
+  /* width: 110px; */
 }
 .media > img {
   transform: scale(1);
-  transition: transform 0.25s ease-in-out;
+  transition: transform 0.35s ease-in-out;
 }
-
+/* 
 .product-card__link:hover {
   .media > img {
     transform: scale(1.1);
   }
-}
+} */
 .media {
   position: relative;
 }
+
 /* .media > img {
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.25s ease-in-out;
-}*/
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+} */
 
 /* Overlay button styles */
-.product-card-overlay__btn {
+.product-card__overlay-btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,10 +48,9 @@
 }
 .product-card__overlay-quick-view-button {
   opacity: 0;
-  transition: opacity 0.25s ease-in-out;
-
+  transition: opacity 0.35s ease-in-out;
   transform: translateY(20px);
-  transition: transform 0.25s ease-in-out;
+  transition: transform 0.35s ease-in-out;
   background-color: black;
   color: white;
   border: none;
@@ -64,19 +67,18 @@
   top: 0;
   left: 0;
   height: 100%;
-  width: 100%;
+  width: 110px;
   opacity: 0;
-  transition: opacity transform 0.25s ease-in-out;
+  transition: opacity 0.35s ease-in-out;
 }
 .product-card__overlay-view-details > * {
   transform: translateY(20px);
-  transition: transform 0.25s ease-in;
+  transition: transform 0.35s ease-in;
 }
 
-.product-card__price > *,
-.product-card__compareprice > * {
+.product-card__prices > * {
   transform: translateY(0);
-  transition: transform 0.25s ease-in;
+  transition: transform 0.35s ease-in;
 }
 .splide__slide:hover {
   .product-card__overlay-view-details > * {
@@ -85,12 +87,10 @@
   .product-card__overlay-view-details {
     opacity: 1;
   }
-  .product-card__price > *,
-  .product-card__compareprice > * {
+  .product-card__prices > * {
     transform: translateY(-20px);
   }
-  .product-card__price,
-  .product-card__compareprice {
+  .product-card__prices {
     opacity: 0;
   }
   .product-card__overlay-quick-view-button {
@@ -98,6 +98,6 @@
     opacity: 1;
   }
   .media > img {
-    transform: scale(1);
+    transform: scale(1.05);
   }
 }
